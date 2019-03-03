@@ -1,0 +1,97 @@
+
+
+Pd kesempatan kali ini saya akan mencoba tentang perintah-perintah SELECT
+Seperti biasa jalankan dulu MySQL di XAMPP
+Setelah itu masuk ke CMD dan masuk ke MySQL -u root
+
+Kali ini saya sudah menyiapkan database dengan nama "Latihan03" dan saya juga sudah
+menyertakan dua tabel didalamnya. Yaitu tabel "pegawai" dan "pet".
+Lalu kita tampilkan, dengan masukan codingan berikut:
+           USE latihan03;
+           desc pegawai;
+           desc pet;
+
+
+Kemudian kita coba masukan data dengan perintah INSERT INTO, tapi disini
+saya sudah membuat datanya dalam file sql yang dibuat dari notepad untuk
+kemudian dipanggil menggunakan perintah: 
+          \. D:\data_pegawai.sql
+          \. D:\data_pet.sql
+
+
+Seterusnya kita lihat atau tampilkan dengan perintah SELECT * FROM nama_tabel
+          SELECT * FROM pegawai;
+          SELECT * FROM pet;
+
+Pertama kita akan mampilkan data-data yang ada didalam tabel pegawai
+1. Menampilkan data pegawai yang gajinya bukan 2.000.000 dan 1.250.000
+   perintahnya adalah:
+   SELECT * FROM pegawai WHERE gaji<>'2000000' AND gaji<>'1250000';
+
+
+2. Menampilkan data pegawai yang tunjangannya NULL
+   SELECT * FROM pegawai WHERE tunjangan='NULL';
+
+
+3. Menampilkan data pegawai yang tunjangannya tidak NULL
+   SELECT * FROM pegawai WHERE tunjangan<>'NULL';
+
+
+4. Menampilkan jumlah baris pada tabel pegawai
+   SELECT COUNT(id_pegawai)FROM pegawai;
+
+
+5. Menampilkan jumlah total gaji di tabel pegawai
+   SELECT SUM(gaji) AS jumlah FROM pegawai;
+
+
+6. Menampilkan rata-rata gaji pegawai
+   SELECT AVG(gaji) AS rerata FROM pegawai;
+
+
+7. Menampilkan gaji terkecil pegawai
+   SELECT MIN(gaji) AS terkecil FROM pegawai;
+
+
+8. Menampilkan gaji terbesar pejawai
+   SELECT MAX(gaji) AS terbesar FROM pegawai;
+
+
+Kemudian kita akan menampilkan data-data dari tabel pet
+1. Menampilkan jumlah hewan yang dimiliki setiap owner
+   SELECT owner, COUNT(name) AS jumlah FROM pet GROUP BY owner;
+
+
+2. Menampilkan jumlah hewan berdasarkan species
+   SELECT species, COUNT(name) AS jumlah FROM pet GROUP BY species;
+
+
+3. Menampilkan jumlah hewan berdasarkan jenis kelamin
+   SELECT sex, COUNT(name) AS jumlah FROM pet GROUP BY sex;
+
+
+4. Menampilkan jumlah hewan berdasarkan spesiess dan jenis kelamin
+   SELECT species, sex, COUNT(name) AS jumlah FROM pet GROUP BY species, sex;
+
+
+5. Menampilkan jumlah hewan berdasarkan spesies (cat dan dog saja) dan jenis kelamin
+   SELECT species='cat', species='dog', sex, COUNT(name) AS jumlah FROM pet GROUP BY 
+   species='cat', species='dog', sex;
+
+
+   SELESAI..
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
