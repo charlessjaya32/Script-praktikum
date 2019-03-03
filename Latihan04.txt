@@ -1,0 +1,96 @@
+ 
+
+Dikesempatan kali ini saya akan mengajak belajar tentang bagaimana 
+menggabungkan table database menggunakan perintah JOIN
+Seperti biasanya kita jalankan dulu MySQL di XAMPP
+lalu masuk ke MySQL -u root
+
+
+Disini saya sudah membuat database dengan nama "latihan04"
+dan didalam database itu saya sudah membuat 3 table yaitu
+Table Mobil, Table Pelanggan, dan Table Sewa
+Lalu kita tampilkan, dengan masukan codingan berikut:
+          use latihan04;
+          desc mobil;
+          desc pelanggan;
+          desc sewa;
+
+
+Disini juga, saya sudah membuat data-data yang mengisi tabel dan 
+disimpan dalam file sql yang dibuat dari notepad, untuk
+kemudian dipanggil menggunakan perintah: 
+          \. D:\data_mobil.sql
+          \. D:\data_pelanggan.sql
+	  \. D:\data_sewa.sql
+
+
+Lalu tampilkan isi data-data pada masing-masing table
+   select * from mobil;
+   select * from pelanggan;
+   select * from sewa;
+
+
+
+Ketika semua sudah ditampilkan, Kita langsung kepokok pembahasan yaitu
+bagaimana cara melakukan join pada table-table yang sudah kita buat tadi.
+
+
+
+
+
+1. Lakukan join terhadap tabel mobil dan tabel sewa.
+   "select mobil.kode, mobil.jenis, mobil.merk, sewa.nofaktursewa, sewa.tglsewa,
+   sewa.lamasewa, sewa.uangmuka from mobil
+   left join sewa on mobil.kode = sewa.kodemobil;"
+
+
+
+2. Lakukan join tabel sewa,pelanggan dan mobil.
+   "select sewa.nofaktursewa, pelanggan.nama, sewa.tglsewa, mobil.jenis, mobil.merk,
+   sewa.lamasewa, sewa.uangmuka from sewa
+   left join pelanggan on sewa.kodepelanggan = pelanggan.kode
+   left join mobil on sewa.kodemobil = mobil.kode;"
+
+
+3. Lakukan join tabel pelanggan dan tabel sewa.
+   "select pelanggan.nama, pelanggan.kota, sewa.nofaktursewa, sewa.tglsewa, 
+   sewa.kodemobil, sewa.lamasewa, sewa.uangmuka from pelanggan
+   left join sewa on pelanggan.kode = sewa.kodepelanggan;"
+
+
+
+
+
+                         SELESAI...
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
