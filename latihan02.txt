@@ -1,0 +1,79 @@
+
+Sekarang saya akan  mencoba mentutorialkan SQL dasar tentang perintah 
+INSERT, UPDATE, DElete, dan SELECT
+
+Seperti biasanya saya menggunakan XAMPP jadi saya jalankan dulu MySQLnya
+kemudian masuk CMD dan masuk juga ke root MySQL
+
+
+Disini saya sudah membuat database dengan nama "latihan" dan tabel dengan
+nama "mahasiswa" serta dengan field-field diantaranya:
+NIM,Nama,Alamat_Jalan,Kota,Kode_Pos,Jenis_Kelamin,No_HP,Tanggal_Lahir,Kode_Dosen.
+"use latihan";
+"desc mahasiswa;"
+
+
+Oke kemudian kita coba masukankan data dengan perintah INSERT INTO, tapi disini
+saya sudah membuat datanya dalam file sql yang dibuat dari notepad untuk
+kemudian dipanggil menggunakan perintah: 
+"\. D:\Table_data.sql"
+
+
+Seterusnya kita lihat atau tampilkan dengan perintah SELECT * FROM nama_tabel;
+"SELECT * FROM mahasiswa;"
+
+
+Setelah itu kita mencoba perintah UPDATE dengan mencoba merubah mengupdate salah
+satu tanggal lahir dari data mahasiswa, contohnya mengubah tanggal lahir mahasiswa yang
+bernama Ari Santoso menjadi:1979-08-31
+
+UPDATE nama_table SET field_yang_diupdate WHERE kondisi;
+kemudian kita tampilkan hanya yang kita update saja'
+"UPDATE mahasiswa SET tanggal_lahir='1979-08-31' WHERE nim='11223344';
+"SELECT * FROM mahasiswa WHERE nim='11223344';"
+
+Kemudian mencoba perintah DELETE dengan menghapus salah satu data mahasiswa,
+sebagai contoh mahasiswa yang bernama Dina Mariana yang akan kita hapus,
+Perintahnya: "DELETE FROM nama_table WHERE kondisi;
+"DELETE FROM mahasiswa WHERE nim='11223346';"
+"SELECT * FROM mahasiswa;"
+
+Setelah itu mencoba perintah SELECT * FROM, 
+dan hanya menampilkan beberapa field saja dengan perintah:
+SELECT fieldl,...,fieldn FROM nama_tabel;
+"SELECT nama, kota FROM mahasiswa;"
+
+selanjutnya mencoba menampilkan data sesuai yang kita inginkan,
+misalnya kita ingin menampilkan mahasiswa yang berasal dari kota
+tertentu dan berjenis kelamin tertentu dengan menggunakan perintah:
+SELEC * FROM nama_tabel WHERE field1 and field2;
+"SELECT * FROM mahasiswa WHERE kota='bekasi' and jenis_kelamin='perempuan';
+
+Percobaan terahir kita ingin menampilkan data mahasiswa yang berasal dari kota tertentu,
+dengan jenis kelamin laki-laki atau mahasiswa yang berumur lebih dari 22 tahun dengan
+jenis kelamin perempuan, dengan perintah yang sama seperti di atas.
+"SELECT * FROM mahasiswa WHERE kota'bekasi'and jenis_kelamin*;laki-laki' OR tanggal_lahir NOT BETWEEN '1996-01-01' AND'2019
+jenis_kelamin*'perempuan';
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+"
+
