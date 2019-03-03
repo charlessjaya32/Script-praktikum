@@ -1,0 +1,70 @@
+
+
+1. Pastikan kalian sudah menginstal aplikasi XAMPPnya
+
+
+2. Buka aplikasi XAMPP lalu klik "start" pada MySQL sampai muncul 
+              angkanya di PID(s) dan PORT(s)
+
+
+3. Buka pencarian lalu ketik saja com maka akan muncul(Command Prompt) klik
+                 dan masukan codyngan awal ke MySQL
+
+
+4. Kemudian kalian buat databasenya dengan menggunakan perintah 
+                create database latihan01;
+                create database latihan;
+   
+
+5. Lalu kalian tampilkan  databasenya dengan perintah
+                show databases;
+
+
+6. Untuk menghapus database gunakan perintah "drop database latihan;"
+   'latihan' data yang ditampilkan di tabel database
+
+
+7. Kemudian kalian gunakan perintah USE untuk masuk kedalam database
+            "Use latihan01;"
+
+
+8. Untuk membuat Tabel gunakan perintah:
+   "create table mahasiswa (nama varchar(20), kelas text);
+   Tunggu sampai muncul tulisan Query OK
+
+
+9. Untuk menampilkan struktur tabel yang sudah kalian buat gunakan perintah
+                       "desc mahasiswa;"
+
+
+10. Jika kalian ingin menambahkan field database gunakan perintah
+    "alter table mahasiswa add column id int(20) first;"
+                      "desc mahasiswa;"
+
+11. jika kalian ingin mengubah nama field gunakan perintah 
+    "alter table mahasiswa  change nama {nama yang kalian inginkan} varchar(20);
+                       "desc mahasiswa;"
+
+12. jika kalian ingin memodifikasi nama yang panjang gunakan perintah 
+    "alter table mahasiswa modify {nama yang kalian inginkan} text;"
+                      "desc mahasiswa;"
+
+
+13. Jika kalian ingin menghapus field gunakan perintah 
+    "alter table mahasiswa drop {nama yang kalian telah masukan tadi};"
+    Tunggu sampai muncul query ok
+                      "desc mahasiswa;"
+
+
+14. jika kalian ingin menambah index atau key maka gunakan perintah
+    "alter table mahasiswa add primary key(id)"
+                      "desc mahasiswa;"
+
+15. Jika kalian ingin menghapus index atau primary key maka gunakan perintah 
+    "alter table mahasiswa drop primary key;"
+                      "desc mahasiswa;"
+
+    
+Sekian tutorial dari saya, bila ada kesalahan dalam pengetikan,
+mohon dimaafkan. Terima kasih sudah menyaksikan video ini,
+bila menurut kalian bermanfaat bisa menekan tombol like dan subcribe.
